@@ -10,8 +10,25 @@
 #import "UIImage+OpenCV.h"
 #import "stitching.h"
 
+@interface CVWrapper()
+@property (nonatomic) cv::Mat uiimage_data;
+@end
 
 @implementation CVWrapper
+@synthesize uiimage_data;
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        uiimage_data = cv::Mat(3000,3000,CV_8UC1);
+    }
+    return self;
+}
+
+-(UIImage*) toUIImage{
+    return [UIImage imageWithCVMat:uiimage_data];
+}
 
 + (UIImage*) processImageWithOpenCV: (UIImage*) inputImage
 {
@@ -47,24 +64,29 @@
     UIImage* result =  [UIImage imageWithCVMat:stitchedMat];
     return result;
 }
-+ (UIImage*) createUIImageWithArray:(NSArray *)dataArray
+
++ (UIImage *) createUIImageWithArray:(UInt8 *)dataArray
 {
-    if([dataArray count] != 300){
-        NSLog(@"Data length is not enough");
-        return 0;
-    }
+//    if([dataArray count] != 300){
+//        NSLog(@"Data length is not enough");
+//        return 0;
+//    }
     
     cv::Mat matImage = cv::Mat(300,300,CV_8UC1);
-    for (int i = 0; i<matImage.cols; i++) {
-        NSArray *temp = [dataArray objectAtIndex:i];
-        for (int j = 0; j<matImage.rows; j++) {
-            matImage.at<uchar>(i,j) = [(NSNumber *)[temp objectAtIndex:(i*matImage.cols)+j] intValue];
+    
+    for (int i = 0; i<300; i++) {
+        for (int j = 0; j<300; j++) {
+            printf("-%d", *(dataArray+((i*300)+j)));
+           matImage.at<uchar>(i,j) = *(dataArray+((i*300)+j));
         }
     }
     
     UIImage *result = [UIImage imageWithCVMat:matImage];
     return result;
 }
+
+
+
 
 
 @end

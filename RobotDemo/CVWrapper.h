@@ -11,12 +11,17 @@
 
 @interface CVWrapper : NSObject
 
+
 + (UIImage*) processImageWithOpenCV: (UIImage*) inputImage;
 
 + (UIImage*) processWithOpenCVImage1:(UIImage*)inputImage1 image2:(UIImage*)inputImage2;
 
 + (UIImage*) processWithArray:(NSArray*)imageArray;
 
-+ (UIImage*) createUIImageWithArray:(NSArray *)dataArray;
++ (UIImage *) createUIImageWithArray:(UInt8 *)dataArray;
+
+- (UIImage*) toUIImage;
+
++ updateImage;
 
 @end
