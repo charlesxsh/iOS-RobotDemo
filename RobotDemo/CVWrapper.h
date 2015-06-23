@@ -20,8 +20,8 @@
 
 + (UIImage *) createUIImageWithArray:(UInt8 *)dataArray;
 
-- (UIImage*) toUIImage;
-
-+ updateImage;
+//- (UIImage*) toUIImage;
+//
+//+ updateImage;
 
 @end

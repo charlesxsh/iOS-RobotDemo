@@ -10,25 +10,17 @@
 #import "UIImage+OpenCV.h"
 #import "stitching.h"
 
-@interface CVWrapper()
-@property (nonatomic) cv::Mat uiimage_data;
-@end
+//@interface CVWrapper()
+//@property (nonatomic) cv::Mat uiimage_data;
+//@end
 
 @implementation CVWrapper
-@synthesize uiimage_data;
+//@synthesize uiimage_data;
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        uiimage_data = cv::Mat(3000,3000,CV_8UC1);
-    }
-    return self;
-}
 
--(UIImage*) toUIImage{
-    return [UIImage imageWithCVMat:uiimage_data];
-}
+//-(UIImage*) toUIImage{
+//    return [UIImage imageWithCVMat:uiimage_data];
+//}
 
 + (UIImage*) processImageWithOpenCV: (UIImage*) inputImage
 {
@@ -72,12 +64,12 @@
 //        return 0;
 //    }
     
-    cv::Mat matImage = cv::Mat(300,300,CV_8UC1);
+    cv::Mat matImage = cv::Mat(400,400,CV_8UC1);
     
-    for (int i = 0; i<300; i++) {
-        for (int j = 0; j<300; j++) {
-            printf("-%d", *(dataArray+((i*300)+j)));
-           matImage.at<uchar>(i,j) = *(dataArray+((i*300)+j));
+    for (int i = 0; i<400; i++) {
+        for (int j = 0; j<400; j++) {
+        //printf("-%d", *(dataArray+((i*400)+j)));
+           matImage.at<uchar>(399-i,j) = *(dataArray+((i*400)+j));
         }
     }
     
