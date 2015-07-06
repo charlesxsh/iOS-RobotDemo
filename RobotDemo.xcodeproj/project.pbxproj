@@ -17,6 +17,8 @@
 		56C3AF051B1BEE4C008B070B /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3AF021B1BEE4C008B070B /* AsyncSocket.m */; };
 		56C3AF061B1BEE4C008B070B /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3AF041B1BEE4C008B070B /* AsyncUdpSocket.m */; };
 		56C3AF091B1BEFF2008B070B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C3AF081B1BEFF2008B070B /* CFNetwork.framework */; };
+		56DCDA261B3D2A7B000D737E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 56DCDA251B3D2A7B000D737E /* icon.png */; };
+		56DCDA281B3D2D09000D737E /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56DCDA271B3D2D09000D737E /* test_image.jpg */; };
 		56FED0A71B1F55D500DE85BF /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FED0A61B1F55D500DE85BF /* opencv2.framework */; };
 		56FED0A91B1F594C00DE85BF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FED0A81B1F594C00DE85BF /* AssetsLibrary.framework */; };
 		56FED0AE1B1FDC1100DE85BF /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56FED0AB1B1FDC1100DE85BF /* CVWrapper.mm */; };
@@ -53,6 +55,8 @@
 		56C3AF041B1BEE4C008B070B /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncUdpSocket.m; path = RobotDemo/AsyncUdpSocket.m; sourceTree = "<group>"; };
 		56C3AF071B1BEE6E008B070B /* RobotDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RobotDemo-Bridging-Header.h"; path = "RobotDemo/RobotDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		56C3AF081B1BEFF2008B070B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		56DCDA251B3D2A7B000D737E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		56DCDA271B3D2D09000D737E /* test_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test_image.jpg; path = ../test_image.jpg; sourceTree = "<group>"; };
 		56FED0A61B1F55D500DE85BF /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = RobotDemo/opencv2.framework; sourceTree = "<group>"; };
 		56FED0A81B1F594C00DE85BF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		56FED0AA1B1FDC1100DE85BF /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVWrapper.h; path = RobotDemo/CVWrapper.h; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		5639A0E41B185962009CDCD5 /* RobotDemo */ = {
 			isa = PBXGroup;
 			children = (
+				56DCDA271B3D2D09000D737E /* test_image.jpg */,
+				56DCDA251B3D2A7B000D737E /* icon.png */,
 				5639A0E71B185962009CDCD5 /* AppDelegate.swift */,
 				5639A0E91B185962009CDCD5 /* ViewController.swift */,
 				5639A0EB1B185962009CDCD5 /* Main.storyboard */,
@@ -253,9 +259,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56DCDA261B3D2A7B000D737E /* icon.png in Resources */,
 				5639A0ED1B185962009CDCD5 /* Main.storyboard in Resources */,
 				5639A0F21B185962009CDCD5 /* LaunchScreen.xib in Resources */,
 				5639A0EF1B185962009CDCD5 /* Images.xcassets in Resources */,
+				56DCDA281B3D2D09000D737E /* test_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +353,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -390,6 +399,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -416,6 +426,7 @@
 					"$(PROJECT_DIR)/RobotDemo",
 				);
 				INFOPLIST_FILE = RobotDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -434,6 +445,7 @@
 					"$(PROJECT_DIR)/RobotDemo",
 				);
 				INFOPLIST_FILE = RobotDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

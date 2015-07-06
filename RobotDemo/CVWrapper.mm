@@ -9,7 +9,6 @@
 #import "CVWrapper.h"
 #import "UIImage+OpenCV.h"
 #import "stitching.h"
-
 //@interface CVWrapper()
 //@property (nonatomic) cv::Mat uiimage_data;
 //@end
@@ -69,7 +68,7 @@
     for (int i = 0; i<400; i++) {
         for (int j = 0; j<400; j++) {
         //printf("-%d", *(dataArray+((i*400)+j)));
-           matImage.at<uchar>(399-i,j) = *(dataArray+((i*400)+j));
+           matImage.at<uchar>(i,j) = *(dataArray+((i*400)+j));
         }
     }
     
@@ -77,8 +76,53 @@
     return result;
 }
 
++ (bool) checkPointUncharted:(UInt8 *)dataArray positionx:(int)px positiony:(int)py
+{
+    float white_up_limit = 0.5;
+    float white_down_limit = 0.4;
+    int white_count = 0;
+    UInt8 temp = 0;
+    if (*(dataArray+((px*400)+py)) < 160 || *(dataArray+((px*400)+py)) > 230) {
+        return false;
+    }
+    
+    UInt8 *startpoint = dataArray + px*400 + py - 401;
+    for (int i = 0; i<3; i++) {
+        for (int j = 0; j < 3; j++) {
+            temp = *(startpoint+i*400+j);
+            if (temp < 175) {
+                return false;
+            }
+            if (temp > 215) {
+                white_count++;
+            }
+        }
+    }
+    float result = white_count / 9.0;
+    if (result >= white_down_limit && result <= white_up_limit) {
+        //printf("Area is %4.2f\n",result);
+        return true;
+    }else{
+        return false;
+    }
+}
+
++(NSMutableArray *) getAllUncharted:(UInt8 *)dataArray {
+    NSMutableArray *na = [[NSMutableArray alloc]init];
+    for (int i = 0; i < 400; i++) {
+        for (int j = 0 ; j < 400; j++) {
+            if ([CVWrapper checkPointUncharted:dataArray positionx:i positiony:j]){
+                CGPoint temp_point = CGPointMake(i, j);
+                [na addObject:[NSValue valueWithCGPoint:temp_point]];
+            }
+        }
+    }
+    return na;
+}
 
 
 
 
 @end
+
+

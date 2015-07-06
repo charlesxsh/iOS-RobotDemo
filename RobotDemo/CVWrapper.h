@@ -20,8 +20,9 @@
 
 + (UIImage *) createUIImageWithArray:(UInt8 *)dataArray;
 
-//- (UIImage*) toUIImage;
-//
-//+ updateImage;
++ (NSMutableArray *) getAllUncharted:(UInt8 *)dataArray;
+
++ (bool) checkPointUncharted:(UInt8 *)dataArray positionx:(int)px positiony:(int)py;
+
 
 @end
