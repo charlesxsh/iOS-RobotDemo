@@ -2,4 +2,3 @@
 
 import UIKit
 
-sizeof(Int32)

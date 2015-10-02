@@ -18,7 +18,7 @@
 
 + (UIImage*) processWithArray:(NSArray*)imageArray;
 
-+ (UIImage *) createUIImageWithArray:(UInt8 *)dataArray;
++ (UIImage *) createUIImageWithArray:(UInt8 *)dataArray length:(int)imageLength;
 
 + (NSMutableArray *) getAllUncharted:(UInt8 *)dataArray;
 

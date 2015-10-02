@@ -56,51 +56,55 @@
     return result;
 }
 
-+ (UIImage *) createUIImageWithArray:(UInt8 *)dataArray
++ (UIImage *) createUIImageWithArray:(UInt8 *)dataArray length:(int)imageLength
 {
-//    if([dataArray count] != 300){
-//        NSLog(@"Data length is not enough");
-//        return 0;
-//    }
-    
-    cv::Mat matImage = cv::Mat(400,400,CV_8UC1);
-    
-    for (int i = 0; i<400; i++) {
-        for (int j = 0; j<400; j++) {
-        //printf("-%d", *(dataArray+((i*400)+j)));
-           matImage.at<uchar>(i,j) = *(dataArray+((i*400)+j));
+    cv::Mat matImage = cv::Mat(imageLength,imageLength,CV_8UC1);
+    if (imageLength == 60) {
+        for (int i = 0; i<imageLength; i++) {
+            for (int j = 0; j<imageLength; j++) {
+                uchar t = *(dataArray+((i*imageLength)+j));
+                if (t == 0) {
+                    matImage.at<uchar>(i,j) = 255;
+                }else{
+                    matImage.at<uchar>(i,j) = 0;
+                }
+            }
+        }
+    }else{
+        for (int i = 0; i<imageLength; i++) {
+            for (int j = 0; j<imageLength; j++) {
+                matImage.at<uchar>(i,j) = *(dataArray+((i*imageLength)+j));
+            }
         }
     }
-    
     UIImage *result = [UIImage imageWithCVMat:matImage];
     return result;
 }
 
 + (bool) checkPointUncharted:(UInt8 *)dataArray positionx:(int)px positiony:(int)py
 {
-    float white_up_limit = 0.5;
+    float white_up_limit = 0.65;
     float white_down_limit = 0.4;
     int white_count = 0;
     UInt8 temp = 0;
-    if (*(dataArray+((px*400)+py)) < 160 || *(dataArray+((px*400)+py)) > 230) {
+    if (*(dataArray+((px*400)+py)) < 160 || *(dataArray+((px*400)+py)) > 245) {
         return false;
     }
     
-    UInt8 *startpoint = dataArray + px*400 + py - 401;
-    for (int i = 0; i<3; i++) {
-        for (int j = 0; j < 3; j++) {
+    UInt8 *startpoint = dataArray + px*400 + py - 1203;
+    for (int i = 0; i < 7; i++) {
+        for (int j = 0; j < 7; j++) {
             temp = *(startpoint+i*400+j);
-            if (temp < 175) {
+            if (temp < 160) {
                 return false;
             }
-            if (temp > 215) {
+            if (temp > 225) {
                 white_count++;
             }
         }
     }
-    float result = white_count / 9.0;
+    float result = white_count / 49.0;
     if (result >= white_down_limit && result <= white_up_limit) {
-        //printf("Area is %4.2f\n",result);
         return true;
     }else{
         return false;

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		562BF9D61B27CF220097367F /* MapUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562BF9D51B27CF220097367F /* MapUIView.swift */; };
 		5639A0E81B185962009CDCD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A0E71B185962009CDCD5 /* AppDelegate.swift */; };
 		5639A0EA1B185962009CDCD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639A0E91B185962009CDCD5 /* ViewController.swift */; };
 		5639A0ED1B185962009CDCD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5639A0EB1B185962009CDCD5 /* Main.storyboard */; };
@@ -18,7 +17,6 @@
 		56C3AF061B1BEE4C008B070B /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C3AF041B1BEE4C008B070B /* AsyncUdpSocket.m */; };
 		56C3AF091B1BEFF2008B070B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C3AF081B1BEFF2008B070B /* CFNetwork.framework */; };
 		56DCDA261B3D2A7B000D737E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 56DCDA251B3D2A7B000D737E /* icon.png */; };
-		56DCDA281B3D2D09000D737E /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56DCDA271B3D2D09000D737E /* test_image.jpg */; };
 		56FED0A71B1F55D500DE85BF /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FED0A61B1F55D500DE85BF /* opencv2.framework */; };
 		56FED0A91B1F594C00DE85BF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FED0A81B1F594C00DE85BF /* AssetsLibrary.framework */; };
 		56FED0AE1B1FDC1100DE85BF /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 56FED0AB1B1FDC1100DE85BF /* CVWrapper.mm */; };
@@ -37,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		562BF9D51B27CF220097367F /* MapUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapUIView.swift; path = RobotDemo/MapUIView.swift; sourceTree = "<group>"; };
 		5639A0E21B185962009CDCD5 /* RobotDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639A0E61B185962009CDCD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5639A0E71B185962009CDCD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +53,6 @@
 		56C3AF071B1BEE6E008B070B /* RobotDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RobotDemo-Bridging-Header.h"; path = "RobotDemo/RobotDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		56C3AF081B1BEFF2008B070B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		56DCDA251B3D2A7B000D737E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		56DCDA271B3D2D09000D737E /* test_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test_image.jpg; path = ../test_image.jpg; sourceTree = "<group>"; };
 		56FED0A61B1F55D500DE85BF /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = RobotDemo/opencv2.framework; sourceTree = "<group>"; };
 		56FED0A81B1F594C00DE85BF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		56FED0AA1B1FDC1100DE85BF /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVWrapper.h; path = RobotDemo/CVWrapper.h; sourceTree = "<group>"; };
@@ -91,16 +87,10 @@
 		5639A0D91B185962009CDCD5 = {
 			isa = PBXGroup;
 			children = (
-				56B44A901B2FB96E001C3854 /* MyPlayground.playground */,
-				56FED0B01B1FDC9200DE85BF /* stitching.cpp */,
-				56FED0B11B1FDC9200DE85BF /* stitching.h */,
-				56FED0AA1B1FDC1100DE85BF /* CVWrapper.h */,
-				56FED0AB1B1FDC1100DE85BF /* CVWrapper.mm */,
-				56FED0AC1B1FDC1100DE85BF /* UIImage+OpenCV.h */,
-				56FED0AD1B1FDC1100DE85BF /* UIImage+OpenCV.mm */,
-				562BF9D51B27CF220097367F /* MapUIView.swift */,
-				56C3AF0A1B1BEFFD008B070B /* Frameworks */,
 				56C3AF071B1BEE6E008B070B /* RobotDemo-Bridging-Header.h */,
+				56B44A901B2FB96E001C3854 /* MyPlayground.playground */,
+				563EE1F41B607C3300508899 /* Opencv */,
+				56C3AF0A1B1BEFFD008B070B /* Frameworks */,
 				56C3AF001B1BEE30008B070B /* AsyncSocket */,
 				5639A0E41B185962009CDCD5 /* RobotDemo */,
 				5639A0FA1B185962009CDCD5 /* RobotDemoTests */,
@@ -120,7 +110,6 @@
 		5639A0E41B185962009CDCD5 /* RobotDemo */ = {
 			isa = PBXGroup;
 			children = (
-				56DCDA271B3D2D09000D737E /* test_image.jpg */,
 				56DCDA251B3D2A7B000D737E /* icon.png */,
 				5639A0E71B185962009CDCD5 /* AppDelegate.swift */,
 				5639A0E91B185962009CDCD5 /* ViewController.swift */,
@@ -155,6 +144,19 @@
 				5639A0FC1B185962009CDCD5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		563EE1F41B607C3300508899 /* Opencv */ = {
+			isa = PBXGroup;
+			children = (
+				56FED0B01B1FDC9200DE85BF /* stitching.cpp */,
+				56FED0B11B1FDC9200DE85BF /* stitching.h */,
+				56FED0AA1B1FDC1100DE85BF /* CVWrapper.h */,
+				56FED0AB1B1FDC1100DE85BF /* CVWrapper.mm */,
+				56FED0AC1B1FDC1100DE85BF /* UIImage+OpenCV.h */,
+				56FED0AD1B1FDC1100DE85BF /* UIImage+OpenCV.mm */,
+			);
+			name = Opencv;
 			sourceTree = "<group>";
 		};
 		56C3AF001B1BEE30008B070B /* AsyncSocket */ = {
@@ -263,7 +265,6 @@
 				5639A0ED1B185962009CDCD5 /* Main.storyboard in Resources */,
 				5639A0F21B185962009CDCD5 /* LaunchScreen.xib in Resources */,
 				5639A0EF1B185962009CDCD5 /* Images.xcassets in Resources */,
-				56DCDA281B3D2D09000D737E /* test_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +287,6 @@
 				56FED0B21B1FDC9200DE85BF /* stitching.cpp in Sources */,
 				56C3AF061B1BEE4C008B070B /* AsyncUdpSocket.m in Sources */,
 				56FED0AE1B1FDC1100DE85BF /* CVWrapper.mm in Sources */,
-				562BF9D61B27CF220097367F /* MapUIView.swift in Sources */,
 				5639A0E81B185962009CDCD5 /* AppDelegate.swift in Sources */,
 				56C3AF051B1BEE4C008B070B /* AsyncSocket.m in Sources */,
 			);
